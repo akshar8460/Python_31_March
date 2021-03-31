@@ -1,0 +1,34 @@
+import openpyxl as op
+
+wb = op.load_workbook('realestatedata.xlsx')
+print(type(wb))
+
+sheets = wb.sheetnames
+print("listing of sheets ")
+for i in sheets:
+    print(i)
+
+sheet = wb['Akshar']
+
+print(type(sheet))
+
+print(sheet.title)
+
+data1 = sheet['C4']
+
+print(data1)
+print(data1.value)
+
+houseprice = ()
+for i in range(1, 190):
+    #print(sheet.cell(row=i, column=10).value)
+    price = sheet.cell(row=i, column=4).value;
+    #print(price);
+    houseType = sheet.cell(row=i, column=1).value;
+    #print(houseType);
+    description = sheet.cell(row=i, column=2).value;
+    #print(description);
+    numberBedrooms = sheet.cell(row=i, column=3).value;
+    #print(numberBedrooms);
+    houseprice = (houseType, description, numberBedrooms, price)
+    print(houseprice)
