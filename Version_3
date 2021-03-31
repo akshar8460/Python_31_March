@@ -1,0 +1,17 @@
+houseprice_1 = []
+for i in range(1, 190):
+    #print(sheet.cell(row=i, column=10).value)
+    price = sheet.cell(row=i, column=4).value;
+    #print(price);
+    houseType = sheet.cell(row=i, column=1).value;
+    #print(houseType);
+    description = sheet.cell(row=i, column=2).value;
+    #print(description);
+    numberBedrooms = sheet.cell(row=i, column=3).value;
+    #print(numberBedrooms);
+    houseprice = (houseType, description, numberBedrooms, price)
+    print(houseprice)
+    houseprice_1.append(houseprice)
+
+for i in houseprice_1:
+    print(i)
